@@ -1,6 +1,8 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Projection View for Sales Item'
+@Search.searchable: true
 @Metadata.ignorePropagatedAnnotations: true
+@Metadata.allowExtensions: true
 define view entity ZC_SALESITEM as projection on ZI_SALESITEM as SalesItem
 {
     key Salesitemuuid,
