@@ -1,0 +1,53 @@
+@Metadata.layer: #CORE
+annotate entity ZC_SALESITEM with
+{
+  @EndUserText.label : 'Sales Item UUID'
+  @UI.lineItem: [{position: 10 }]
+  Salesitemuuid;
+  @EndUserText.label : 'Sales Order UUID'
+  @UI.lineItem: [{position: 20 }]
+  Salesorderuuid;
+  @EndUserText.label : 'Sales Order Item '
+  @UI.lineItem: [{position: 30 }]
+  @UI.selectionField: [{ position: 10 }]
+  Salesorderitem;
+  @EndUserText.label : 'Sales Order Item Category '
+  @UI.lineItem: [{position: 40 }]
+  Salesordeitemcategory;
+  @EndUserText.label : 'Sales Item Description'
+  @UI.lineItem: [{position: 50 }]
+  Salesorderitemtext;
+  @EndUserText.label : 'Material'
+  @UI.lineItem: [{position: 60 }]
+  @UI.selectionField: [{ position: 20 }]
+  Material;
+  @EndUserText.label : 'Plant'
+  @UI.lineItem: [{position: 70 }]
+  @UI.selectionField: [{ position: 30 }]
+  Plant;
+  @EndUserText.label : 'Order Quantity'
+  @UI.lineItem: [{position: 80 }]
+  Orderquantity;
+  @EndUserText.label : 'Order Quantity Unit'
+  @UI.lineItem: [{position: 90 }]
+  Orderquantityunit;
+  @EndUserText.label : 'Net Amount'
+  @UI.lineItem: [{position: 100 }]
+  Netamount;
+  @EndUserText.label : 'Transcation Currency'
+  @UI.lineItem: [{position: 110 }]
+  Transactioncurrency;
+  @EndUserText.label : 'Created By User'
+  @UI.lineItem: [{position: 120 }]
+  Creationbyuser;
+  @UI.hidden: true
+  Createdby;
+  @UI.hidden: true
+  Createdat;
+  @UI.hidden: true
+  Lastchangedby;
+  @UI.hidden: true
+  Lastchangedat;
+
+
+}
