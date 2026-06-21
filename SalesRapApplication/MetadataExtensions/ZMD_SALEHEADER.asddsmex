@@ -1,0 +1,47 @@
+@Metadata.layer: #CORE
+annotate entity ZC_SALESHEADER with
+{
+  @EndUserText.label : 'Sales Order UUID'
+  @UI.lineItem: [{position: 10 }]
+  Salesorderuuid;
+  @EndUserText.label : 'Sales Order'
+  @UI.lineItem: [{position: 20 }]
+  @UI.selectionField: [{position: 10}]
+  Salesorder;
+  @EndUserText.label : 'Sales Order Type'
+  @UI.lineItem: [{position: 30 }]
+  Salesordertype;
+  @EndUserText.label : 'Sales Description'
+  @UI.lineItem: [{position: 40 }]
+  Description;
+  @EndUserText.label : 'Sales Organization'
+  @UI.lineItem: [{position: 50 }]
+  Salesorganization;
+  @EndUserText.label: 'Sold To Party'
+  @UI.lineItem: [{position: 60 }]
+  @UI.selectionField: [{position: 20}]
+  Soldtoparty;
+  @EndUserText.label: 'Distribution Channel'
+  @UI.lineItem: [{position: 70 }]
+  Distributionchannel;
+  @EndUserText.label: 'Document Reason'
+  @UI.lineItem: [{position: 80 }]
+  Documentreason;
+  @EndUserText.label: 'Total Net Amount'
+  @UI.lineItem: [{position: 90 }]
+  Totalnetamount;
+  @EndUserText.label: 'Transaction Currency'
+  Transactioncurrency;
+  @UI.lineItem: [{position: 100 }]
+  @EndUserText.label : 'Created By User'
+  Createdbyuser;
+  @UI.hidden: true
+  Createdby;
+  @UI.hidden: true
+  Createdat;
+  @UI.hidden: true
+  Lastchangedby;
+  @UI.hidden: true
+  Lastchangedat;
+
+}
