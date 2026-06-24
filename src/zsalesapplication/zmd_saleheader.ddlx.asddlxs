@@ -1,21 +1,45 @@
 @Metadata.layer: #CORE
+@UI : { headerInfo : { typeNamePlural: 'Sales Order ' ,
+  title: {type: #STANDARD , value: 'Salesorder'  } }  }
 annotate entity ZC_SALESHEADER with
 {
+
+  @UI.facet: [{ id :'salesorder'  ,
+                purpose :#STANDARD ,
+                type : #IDENTIFICATION_REFERENCE,
+                label : 'Sales Order',
+                position: 10} ,
+                
+                
+                { id :'salesorderitem'  ,
+                purpose :#STANDARD ,
+                label : 'Sales Order Item',
+                type : #LINEITEM_REFERENCE,
+                position: 20 ,
+                targetElement: '_salesitem'}
+]
+                
+ 
   @EndUserText.label : 'Sales Order UUID'
   @UI.lineItem: [{position: 10 }]
+  @UI.hidden: true
   Salesorderuuid;
   @EndUserText.label : 'Sales Order'
   @UI.lineItem: [{position: 20 }]
   @UI.selectionField: [{position: 10}]
+  @UI.identification: [{ position: 10  }]
   Salesorder;
   @EndUserText.label : 'Sales Order Type'
   @UI.lineItem: [{position: 30 }]
+  @UI.identification: [{ position: 20  }]
   Salesordertype;
   @EndUserText.label : 'Sales Description'
   @UI.lineItem: [{position: 40 }]
+  @UI.identification: [{ position: 30  }]
   Description;
   @EndUserText.label : 'Sales Organization'
   @UI.lineItem: [{position: 50 }]
+  @UI.identification: [{ position: 40  }]
   Salesorganization;
   @EndUserText.label: 'Sold To Party'
   @UI.lineItem: [{position: 60 }]
