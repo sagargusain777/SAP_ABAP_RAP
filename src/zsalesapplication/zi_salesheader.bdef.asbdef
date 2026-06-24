@@ -1,0 +1,28 @@
+managed implementation in class zbp_i_salesheader unique;
+strict ( 2 );
+
+define behavior for ZI_SALESHEADER //alias <alias_name>
+persistent table zsalesheader
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly , numbering : managed ) Salesorderuuid;
+  association _salesitem { create; }
+}
+
+define behavior for ZI_SALESITEM //alias <alias_name>
+persistent table zsalesitem
+lock dependent by _salesheader
+authorization dependent by _salesheader
+//etag master <field_name>
+{
+  update;
+  delete;
+  field(readonly) Salesorderuuid;
+  field ( readonly , numbering : managed ) Salesitemuuid;
+  association _salesheader;
+}
